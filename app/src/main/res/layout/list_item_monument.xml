@@ -6,11 +6,9 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="12dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,40 +18,41 @@
             android:id="@+id/list_item_monument_image_view"
             android:layout_width="68dp"
             android:layout_height="68dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/background_dark"/>
 
         <ProgressBar
             android:id="@+id/list_item_rush_status"
             style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="16dp"
             android:layout_below="@id/list_item_monument_image_view"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="12dp"
             android:progress="80"/>
 
         <TextView
-            android:id="@+id/lsit_item_monument_name_textView"
+            android:id="@+id/list_item_monument_name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:layout_toRightOf="@id/list_item_monument_image_view"
-            android:layout_marginTop="8dp"
             android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/list_item_monument_image_view"
+            android:text="Title"
+            android:textColor="@android:color/black"
             android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"/>
+            android:textStyle="bold"/>
 
         <RatingBar
-            style="@android:style/Widget.Holo.RatingBar.Indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:id="@+id/list_item_monument_ratingbar"
+            style="@android:style/Widget.Holo.RatingBar.Small"
+            android:layout_width="80dp"
+            android:layout_height="16dp"
             android:layout_alignBottom="@+id/list_item_rush_status"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="8dp"
-            android:rating="4.5"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"/>
 
     </RelativeLayout>
 
