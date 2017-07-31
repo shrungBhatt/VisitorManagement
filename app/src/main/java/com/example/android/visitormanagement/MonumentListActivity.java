@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//The main class where the list of monuments will be seen.
 public class MonumentListActivity extends AppCompatActivity {
 
     private List<MonumentData> mMonumentDatas;
@@ -44,6 +44,7 @@ public class MonumentListActivity extends AppCompatActivity {
 
 
 
+    //ViewHolder of MonumentList.
     private class MonumentHolder extends RecyclerView.ViewHolder{
         private ImageView mMonumentImageView;
         private TextView mMonumentNameTextView;
@@ -52,6 +53,7 @@ public class MonumentListActivity extends AppCompatActivity {
         private MonumentData mMonumentData;
 
 
+        //Constructor to call the viewHolder
         public MonumentHolder(LayoutInflater inflater, ViewGroup container){
             super(inflater.inflate(R.layout.list_item_monument,container,false));
 
@@ -67,18 +69,23 @@ public class MonumentListActivity extends AppCompatActivity {
             mRatingBar = (RatingBar)itemView.findViewById(R.id.list_item_monument_ratingbar);
         }
 
+
+        //Method used to call the viewHolder in the adapter class.
         public void bindMonumentData(MonumentData monumentData){
             mMonumentData = monumentData;
             mMonumentNameTextView.setText(mMonumentData.getMonumentName());
             mRatingBar.setRating((float)mMonumentData.getRating());
             mMonumentRushProgressBar.setProgress((mMonumentData.getRfidCnt()+ mMonumentData.getQrCnt())/10);
+
         }
 
     }
 
+    //This is the adapter class for recyclerView.
     private class MonumentAdapter extends RecyclerView.Adapter<MonumentHolder>{
         List<MonumentData> mMonumentDatas;
 
+        //Constructor of adapter class used to initialize to recyclerView.
         public MonumentAdapter(List<MonumentData> monumentDatas){
             mMonumentDatas = monumentDatas;
         }
@@ -102,6 +109,7 @@ public class MonumentListActivity extends AppCompatActivity {
         }
     }
 
+    //Method used to fetch the data from the MySql Server.
     private void fetchMonumentData(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 "http://ersnexus.esy.es/rmc_to_android.php",
@@ -128,6 +136,8 @@ public class MonumentListActivity extends AppCompatActivity {
 
     }
 
+
+    //Method used to parse the JSON data that we obtained from the server.
     private List<MonumentData> getMonumentsData(String jsonString){
         List<MonumentData> monumentDatas = new ArrayList<>();
 

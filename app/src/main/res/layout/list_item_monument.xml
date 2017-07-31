@@ -46,9 +46,9 @@
 
         <RatingBar
             android:id="@+id/list_item_monument_ratingbar"
-            style="@android:style/Widget.Holo.RatingBar.Small"
-            android:layout_width="80dp"
-            android:layout_height="16dp"
+            style="@android:style/Widget.Holo.Light.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
             android:layout_alignBottom="@+id/list_item_rush_status"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"

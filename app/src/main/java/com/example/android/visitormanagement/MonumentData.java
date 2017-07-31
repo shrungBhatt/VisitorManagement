@@ -4,6 +4,8 @@ package com.example.android.visitormanagement;
  * Created by Shrung on 29-Jul-17.
  */
 
+//Model class for monuments having getter and setter to store the data.
+
 public class MonumentData {
     private String mMonumentName;
     private int mRfidCnt;
